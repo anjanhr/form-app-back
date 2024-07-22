@@ -11,11 +11,15 @@ app.use(cors());
 app.use(express.json());
 
 dbConnect();
-app.use("/api", routes);
+app.use(routes);
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send("Something broke!");
+});
+
+app.get("/", (req, res) => {
+  res.send("Hello World");
 });
 
 app.listen(port, () => {
