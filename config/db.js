@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const dbConnect = () => {
   mongoose
-    .connect(process.env.MONGODB_URL)
+    .connect("mongodb+srv://anjanhr1997:Et5ckzaHkpfVBLoh@form-app.eluvugp.mongodb.net/")
     .then(() => {
       console.log("Connected to MongoDB");
     })
